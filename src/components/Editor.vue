@@ -4,7 +4,7 @@
     <span>{{ user.displayName }}</span>
     <button @click="logout">ログアウト</button>
     <div class="memoListWrapper">
-      <div class="memoList" v-for="(memo, index) in memos" @click="selectMemo(index)" :data-selected="index == seectedIndex">
+      <div class="memoList" v-for="(memo, index) in memos" @click="selectMemo(index)" :data-selected="index == selectedIndex">
         <p class="memoTitle">{{ displayTitle(memo.markdown) }}</p>
       </div>
       <button class="addMemoBtn" @click="addMemo">メモの追加</button>
