@@ -31,13 +31,13 @@ export default {
     }
   },
   created: function() {
-    firebaes
+    firebase
       .database()
       .ref('memos/' + this.user.uid)
       .once('value')
       .then(result => {
         if (result.val()) {
-          this.memos = result.val()
+          this.memos = result.val();
         }
       })
   },
@@ -58,7 +58,7 @@ export default {
     },
     saveMemos: function() {
       firebase
-        .database
+        .database()
         .ref('memos/' + this.user.uid)
         .set(this.memos);
     },
