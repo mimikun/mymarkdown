@@ -48,7 +48,7 @@ export default {
     addMemo: function() {
       this.memos.push({
         markdown: '無題のメモ',
-      })
+      });
     },
     deleteMemo: function() {
       this.memos.splice(this.selectedIndex, 1);
@@ -69,7 +69,7 @@ export default {
       return marked(this.memos[this.selectedIndex].markdown);
     },
     displayTitle: function(text) {
-      return text.split(/\n/)[0];
+      return text.split(/\n/)[0].replace(/#\s/, '');
     },
   }
 }
