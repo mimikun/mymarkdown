@@ -1,8 +1,9 @@
 <template>
-  <div class="editor">
-    <h1>エディター画面</h1>
-    <span>{{ user.displayName }}</span>
-    <button @click="logout">ログアウト</button>
+<div id="editor">
+  <h1>エディター画面</h1>
+  <span>{{ user.displayName }}</span>
+  <button @click="logout">ログアウト</button>
+  <div class="editorWrapper">
     <div class="memoListWrapper">
       <div class="memoList" v-for="(memo, index) in memos" @click="selectMemo(index)" :data-selected="index == selectedIndex">
         <p class="memoTitle">{{ displayTitle(memo.markdown) }}</p>
@@ -11,10 +12,10 @@
       <button class="deleteMemoBtn" v-if="memos.length > 1" @click="deleteMemo">選択中のメモの削除</button>
       <button class="saveMemosBtn" @click="saveMemos">メモの保存</button>
     </div>
-      <textarea class="markdown" v-model="memos[selectedIndex].markdown"></textarea>
-      <div class="preview" v-html="preview()"></div>
-    </div>
+    <textarea class="markdown" v-model="memos[selectedIndex].markdown"></textarea>
+    <div class="preview" v-html="preview()"></div>
   </div>
+</div>
 </template>
 
 <script>
